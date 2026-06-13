@@ -9,7 +9,7 @@ This document serves as the Principal ML Architectural blueprint. It strictly en
 The `ml_engine` is divided into strict domains: datasets (preparation) and training (execution).
 
 ```text
-CityLens/
+CityShield/
 ├── data/
 │   ├── raw/
 │   ├── interim/

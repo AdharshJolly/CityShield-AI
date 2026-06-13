@@ -17,8 +17,13 @@ class Detection(BaseModel):
 class DetectionStream(BaseModel):
     frame_id: int
     timestamp: str
+    camera_id: str
+    location_id: str
     detections: List[Detection]
 
+# [TECHNICAL DEBT]: Future schema evolution should replace this generic EventDetails
+# with specialized payload classes (e.g. FireEventDetails, AccidentEventDetails, 
+# AnimalEventDetails, StreetlightEventDetails) for stricter validation.
 class EventDetails(BaseModel):
     velocity_drop: Optional[bool] = None
     iou_intersection: Optional[float] = None

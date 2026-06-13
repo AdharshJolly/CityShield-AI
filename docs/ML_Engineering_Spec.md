@@ -22,17 +22,7 @@ Architecture:
 - YOLOv12-L
 
 Classes:
-- Fire
-- Smoke
-- Burning Waste
-- Fallen Tree
-- Pole
-- Barricade
-- Debris
-- Streetlight
-- Damaged Streetlight
-- Dead Animal
-- Stray Animal
+See ARCHITECTURE_FREEZE.md for authoritative taxonomy.
 
 ---
 
@@ -45,8 +35,7 @@ Architecture:
 - Temporal Analysis
 
 Classes:
-- Accident
-- Near Accident
+See ARCHITECTURE_FREEZE.md for authoritative taxonomy.
 
 ---
 

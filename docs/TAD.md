@@ -44,17 +44,7 @@ Avoid a single monolithic model.
 YOLOv12-L
 
 ### Classes
-- Fire
-- Smoke
-- Burning Waste
-- Collapsed Tree
-- Collapsed Pole
-- Barricade
-- Debris
-- Streetlight
-- Damaged Streetlight
-- Dead Animal
-- Stray Animal
+See ARCHITECTURE_FREEZE.md for authoritative taxonomy.
 
 ---
 
@@ -64,8 +54,7 @@ YOLOv12-L
 YOLOv12 + Temporal Analysis
 
 ### Classes
-- Accident
-- Near Accident
+See ARCHITECTURE_FREEZE.md for authoritative taxonomy.
 
 ---
 

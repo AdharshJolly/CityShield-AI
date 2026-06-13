@@ -1,0 +1,11 @@
+analytics:
+  fire_severity_iou: 0.3
+  accident_velocity_drop_pct: 60.0
+  accident_iou_threshold: 0.1
+  animal_dwell_time_sec: 45
+  streetlight_flicker_hz: 5
+  streetlight_off_temporal_sec: 10
+inference:
+  confidence_threshold: 0.45
+  nms_iou_threshold: 0.5
+  max_latency_ms: 150

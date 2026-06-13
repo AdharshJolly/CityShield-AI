@@ -1,0 +1,11 @@
+classes:
+  0: "fire"
+  1: "smoke"
+  2: "burning_waste"
+  3: "fallen_tree"
+  4: "collapsed_structure"
+  5: "streetlight_normal"
+  6: "streetlight_damaged"
+  7: "animal"
+  8: "vehicle"
+  9: "person"

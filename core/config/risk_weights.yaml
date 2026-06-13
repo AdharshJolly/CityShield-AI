@@ -1,0 +1,33 @@
+# Project Specific Risk Index (PSRI) Base Multipliers
+hazards:
+  fire:
+    base_score: 80
+    kpi_weight: 0.40
+  smoke:
+    base_score: 50
+    kpi_weight: 0.40
+  burning_waste:
+    base_score: 60
+    kpi_weight: 0.40
+  fallen_tree:
+    base_score: 70
+    kpi_weight: 0.20
+  collapsed_structure:
+    base_score: 90
+    kpi_weight: 0.20
+  streetlight_damaged:
+    base_score: 40
+    kpi_weight: 0.20
+  streetlight_normal:
+    base_score: 0
+    kpi_weight: 0.20
+  animal:
+    base_score: 30
+    kpi_weight: 0.10
+  accident:
+    base_score: 95
+    kpi_weight: 0.10
+
+vulnerability_modifiers:
+  person_proximity_10m: 1.5
+  vehicle_proximity_10m: 1.2
