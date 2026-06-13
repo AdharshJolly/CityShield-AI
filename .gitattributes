@@ -1,0 +1,26 @@
+# ==========================================
+# CityShield AI - Git LFS & Normalization
+# ==========================================
+
+# Enforce Unix line endings (LF) for all text files (Windows/Linux cross-compatibility)
+* text=auto eol=lf
+
+# ------------------------------------------
+# Git LFS (Large File Storage) Tracked Files
+# ------------------------------------------
+
+# Model Weights
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.engine filter=lfs diff=lfs merge=lfs -text
+*.tflite filter=lfs diff=lfs merge=lfs -text
+
+# Video / Media Assets (Demos & Audits)
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Large Reports / Data exports
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text

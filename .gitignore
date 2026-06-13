@@ -1,0 +1,79 @@
+# ==========================================
+# CityShield AI - Production .gitignore
+# ==========================================
+
+# 1. Python & Environment
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.tox/
+
+# 2. Machine Learning & Datasets
+data/raw/
+data/interim/
+data/processed/
+datasets/raw/
+datasets/interim/
+datasets/processed/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+wandb/
+mlruns/
+tensorboard/
+runs/
+experiments/
+
+# 3. Large Media & Artifacts
+*.mp4
+*.avi
+*.mkv
+# Ignore generated audit images
+audit_class_*.jpg
+
+# 4. Frontend (Next.js & Node)
+node_modules/
+.next/
+build/
+dist/
+.out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 5. Secrets & Credentials
+.env
+.env.*
+!.env.example
+kaggle.json
+credentials.json
+*.pem
+*.key
+
+# 6. Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# 7. IDE & Editor Files
+.vscode/
+.idea/
+*.iml
+*.swp
+*~
+
+# 8. Logs
+*.log
+logs/
