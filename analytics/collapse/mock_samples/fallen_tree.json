@@ -1,0 +1,20 @@
+{
+  "frame_id": 9002,
+  "timestamp": "2026-06-14T13:00:00Z",
+  "camera_id": "cam-suburb-05",
+  "location_id": "loc-40.7128-74.0060",
+  "detections": [
+    {
+      "class_id": 4,
+      "class_name": "fallen_tree",
+      "confidence": 0.88,
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.7,
+        "width": 0.6,
+        "height": 0.2
+      },
+      "track_id": 12
+    }
+  ]
+}

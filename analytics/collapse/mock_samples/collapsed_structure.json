@@ -1,0 +1,20 @@
+{
+  "frame_id": 9003,
+  "timestamp": "2026-06-14T13:00:05Z",
+  "camera_id": "cam-downtown-02",
+  "location_id": "loc-40.7130-74.0065",
+  "detections": [
+    {
+      "class_id": 5,
+      "class_name": "collapsed_structure",
+      "confidence": 0.95,
+      "bbox": {
+        "x_center": 0.3,
+        "y_center": 0.4,
+        "width": 0.4,
+        "height": 0.5
+      },
+      "track_id": null
+    }
+  ]
+}

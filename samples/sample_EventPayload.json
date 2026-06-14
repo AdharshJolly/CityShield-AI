@@ -1,0 +1,11 @@
+{
+  "event_id": "evt-fire-20260614-001",
+  "timestamp": "2026-06-14T12:00:05Z",
+  "hazard_type": "fire_hazard",
+  "severity_level": "critical",
+  "psri_score": 85.0,
+  "details": {
+    "area_percentage": 0.15,
+    "dwell_time_sec": 5
+  }
+}

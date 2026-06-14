@@ -1,7 +1,7 @@
 import os
 import yaml
 from pathlib import Path
-from taxonomy import CITYSHIELD_CLASSES
+from ml_engine.datasets.taxonomy import CITYSHIELD_CLASSES
 
 def create_yaml(processed_dir: Path):
     print("--- Generating data.yaml ---")

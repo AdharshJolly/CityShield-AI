@@ -1,26 +1,21 @@
-# CityShield AI CODEOWNERS
+################################################################################
+# WARNING: MUST BE REPLACED BEFORE PUBLICATION!
+# The following usernames contain TODO placeholders for Workstream ownership.
+# They MUST be replaced with actual GitHub usernames (e.g., @johndoe) before repository publication.
+################################################################################
 
-# Global defaults (Fallback)
-* @LeadArchitect
+* @Adharsh
+/ml_engine/ @Adharsh
+/core/config/ @Adharsh
+/core/contracts/ @Adharsh
+/analytics/fire/ @Adharsh
 
-# Core Libraries (Shared, PRs required)
-/core/contracts/ @LeadArchitect
-/core/tracking/ @WorkstreamC
-/core/utils/ @LeadArchitect
+# Placeholder Workstream Assignments
+/analytics/streetlight/ @TODO_WORKSTREAM_A
+/analytics/animal/ @TODO_WORKSTREAM_B
+/analytics/accident/ @TODO_WORKSTREAM_C
+/core/tracking/ @TODO_WORKSTREAM_C
+/analytics/collapse/ @TODO_WORKSTREAM_D
 
-# ML Engine & Fire Intelligence
-/ml_engine/ @LeadArchitect
-/analytics/fire/ @LeadArchitect
-
-# Streetlight Intelligence
-/analytics/streetlight/ @WorkstreamA
-
-# Animal Intelligence
-/analytics/animal/ @WorkstreamB
-
-# Accident Intelligence
-/analytics/accident/ @WorkstreamC
-
-# Platform & Collapse Intelligence
-/analytics/collapse/ @WorkstreamD
-/platform/ @WorkstreamD
+# Platform is a shared integration area. No dedicated owner required during MVP phase.
+# /platform/ 

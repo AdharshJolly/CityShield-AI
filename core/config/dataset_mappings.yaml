@@ -1,0 +1,17 @@
+# Mapping of Roboflow/Kaggle datasets to CityShield Classes
+# Format: <dataset_name>: { <old_class_id>: <new_cityshield_class_name> }
+
+dataset_mappings:
+  fire-smoke-yvnrc:
+    0: "fire"
+    1: "smoke"
+  damaged-lights:
+    0: "streetlight_damaged"
+    1: "streetlight_normal"
+  sodioum-only-jkq3f:
+    0: "streetlight_damaged"
+    1: "streetlight_normal"
+
+# Class Caps (max samples to extract per class to balance dataset)
+max_samples:
+  streetlight_normal: 5000

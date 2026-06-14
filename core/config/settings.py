@@ -11,8 +11,10 @@ def load_yaml(filename: str) -> dict:
 
 # Expose global settings
 CLASSES = load_yaml("classes.yaml")["classes"]
+COCO_CLASSES = load_yaml("classes.yaml").get("coco_classes", [])
 THRESHOLDS = load_yaml("thresholds.yaml")
 RISK_WEIGHTS = load_yaml("risk_weights.yaml")
+DATASET_MAPPINGS = load_yaml("dataset_mappings.yaml")
 
 # Environment / API Settings
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:pass@localhost:5432/cityshield")

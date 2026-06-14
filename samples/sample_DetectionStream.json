@@ -1,0 +1,32 @@
+{
+  "frame_id": 1045,
+  "timestamp": "2026-06-14T12:00:00Z",
+  "camera_id": "cam-downtown-01",
+  "location_id": "loc-40.7128-74.0060",
+  "detections": [
+    {
+      "class_id": 0,
+      "class_name": "fire",
+      "confidence": 0.92,
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.6,
+        "width": 0.2,
+        "height": 0.3
+      },
+      "track_id": 14
+    },
+    {
+      "class_id": 1,
+      "class_name": "smoke",
+      "confidence": 0.85,
+      "bbox": {
+        "x_center": 0.55,
+        "y_center": 0.45,
+        "width": 0.3,
+        "height": 0.4
+      },
+      "track_id": null
+    }
+  ]
+}

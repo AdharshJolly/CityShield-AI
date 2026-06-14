@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from pathlib import Path
-from taxonomy import CITYSHIELD_CLASSES
+from ml_engine.datasets.taxonomy import CITYSHIELD_CLASSES
 
 def generate_statistics(processed_dir: Path, version_name: str):
     print("--- Generating Statistics & Manifest ---")

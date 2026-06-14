@@ -1,1 +1,1 @@
-# Lead Architect: YOLOv12 Unified Training Script.
+# Lead Architect: YOLO11n Training Pipeline.

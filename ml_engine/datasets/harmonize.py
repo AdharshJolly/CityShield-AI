@@ -1,31 +1,23 @@
 import os
 import shutil
+import sys
 from pathlib import Path
-from taxonomy import CITYSHIELD_CLASSES
+from ml_engine.datasets.taxonomy import CITYSHIELD_CLASSES
 
-# [TECHNICAL DEBT / MVP NOTE]:
-# The CLASS_MAPPINGS below are hardcoded for the Hackathon MVP. 
-# Future Migration: Move these mappings to core/config/dataset_mappings.yaml
-# to prevent hardcoding dataset names in code.
-CLASS_MAPPINGS = {
-    "fire-smoke-yvnrc": {
-        0: CITYSHIELD_CLASSES.index("fire"),
-        1: CITYSHIELD_CLASSES.index("smoke")
-    },
-    "damaged-lights": {
-        0: CITYSHIELD_CLASSES.index("streetlight_damaged"),
-        1: CITYSHIELD_CLASSES.index("streetlight_normal")
-    },
-    "sodioum-only-jkq3f": {
-        0: CITYSHIELD_CLASSES.index("streetlight_damaged"),
-        1: CITYSHIELD_CLASSES.index("streetlight_normal")
-    }
-}
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+from core.config.settings import DATASET_MAPPINGS
 
-MAX_SAMPLES_PER_CLASS = {
-    CITYSHIELD_CLASSES.index("animal"): 5000,
-    CITYSHIELD_CLASSES.index("streetlight_normal"): 5000
-}
+CLASS_MAPPINGS = {}
+for ds_name, mapping in DATASET_MAPPINGS.get("dataset_mappings", {}).items():
+    CLASS_MAPPINGS[ds_name] = {}
+    for old_id, class_name in mapping.items():
+        if class_name in CITYSHIELD_CLASSES:
+            CLASS_MAPPINGS[ds_name][old_id] = CITYSHIELD_CLASSES.index(class_name)
+
+MAX_SAMPLES_PER_CLASS = {}
+for cls_name, count in DATASET_MAPPINGS.get("max_samples", {}).items():
+    if cls_name in CITYSHIELD_CLASSES:
+        MAX_SAMPLES_PER_CLASS[CITYSHIELD_CLASSES.index(cls_name)] = count
 
 def load_source_yaml(dataset_path: Path):
     pass # Implementation omitted for MVP
