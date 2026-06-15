@@ -1,63 +1,51 @@
-# ==========================================
-# CityShield AI - Production .gitignore
-# ==========================================
-
-# 1. Python & Environment
-venv/
-.venv/
-env/
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-.pytest_cache/
-.mypy_cache/
-.tox/
-
-# 2. Machine Learning & Datasets
-data/raw/
-data/interim/
-data/processed/
-datasets/raw/
-datasets/interim/
-datasets/processed/
-*.pt
-*.pth
-*.onnx
-*.engine
-*.tflite
-wandb/
-mlruns/
-tensorboard/
-runs/
-experiments/
-
-# 3. Large Media & Artifacts
-*.mp4
-*.avi
-*.mkv
-# Ignore generated audit images
-audit_class_*.jpg
-
-# 4. Frontend (Next.js & Node)
-node_modules/
-.next/
+*.so
+.Python
+env/
 build/
+develop-eggs/
 dist/
-.out/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# 5. Secrets & Credentials
+# Virtual environments
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
 .env
-.env.*
-!.env.example
-kaggle.json
-credentials.json
-*.pem
-*.key
+.env.local
 
-# 6. Operating System Files
+# ML and Data
+data/
+experiments/
+*.pt
+*.onnx
+*.weights
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -65,15 +53,16 @@ credentials.json
 .Trashes
 ehthumbs.db
 Thumbs.db
-desktop.ini
 
-# 7. IDE & Editor Files
-.vscode/
-.idea/
-*.iml
-*.swp
-*~
+# Project Specific Overrides
+environment_report.json
 
-# 8. Logs
-*.log
-logs/
+# Reports and temporary files
+docs/archive/
+*.csv
+*.png
+cleanup_orchestrator.py
+transition_orchestrator.py
+fi_4_orchestrator.py
+generate_fi_2_5_reports.py
+generate_fi_3_reports.py
