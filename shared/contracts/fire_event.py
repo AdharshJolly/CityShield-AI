@@ -1,4 +1,6 @@
-from dataclasses import dataclass
+
+from dataclasses import dataclass, asdict
+import json
 
 @dataclass
 class FireEvent:
@@ -9,3 +11,6 @@ class FireEvent:
     psri_score: float
     hazard_type: str
     status: str
+
+    def to_json(self):
+        return json.dumps(asdict(self))
