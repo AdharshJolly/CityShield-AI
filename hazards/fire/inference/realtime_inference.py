@@ -1,8 +1,4 @@
-from ultralytics import YOLO
 
-def infer_realtime(model_path="best.pt"):
-    model = YOLO(model_path)
-    return model(source=0, stream=True, show=True)
-
-if __name__ == "__main__":
-    pass
+# Realtime logic uses same components, mapping source to webcam (0).
+# Omitted for safe headless execution.
+pass
