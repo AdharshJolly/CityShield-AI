@@ -40,8 +40,11 @@ Rigorous forensic audits revealed our model prioritizes macro-level safety hazar
 
 ## 11. Repository Structure
 ```text
-├── submission/              # Final competition artifacts (weights, metrics, zip)
-├── scripts/                 # Execution pipelines (export, infer)
+├── submission/              # Final competition artifacts
+│   ├── fire/                # Fire module weights, metrics, samples
+│   ├── accident/            # (Teammate's module)
+│   └── ...                  # (Other modules)
+├── scripts/                 # Execution pipelines (analytics, infer)
 ├── hazards/fire/            # Core logic (analytics, inference)
 ├── docs/                    # Audits, architecture, and validation reports
 └── requirements.txt         # Pinned python dependencies
@@ -53,8 +56,8 @@ To setup the environment natively:
 pip install -r requirements.txt
 ```
 
-## 14. Competition Deliverables
-All requested deliverables (Weights, Code, Bounding Box CSVs, Annotated Images, Metrics) are pre-packaged into `cityshield_fire_submission.zip` or located directly within the `/submission` directory.
+## 13. Competition Deliverables
+All requested deliverables (Weights, Code, Bounding Box CSVs, Annotated Images, Metrics) for the Fire Intelligence Engine are located directly within the `/submission/fire` directory.
 
 ## 15. Future Improvements
 *   **Semantic Segmentation:** Migrating from bounding boxes to Instance Segmentation (YOLO11n-seg) to calculate exact pixel-perfect fire area.
