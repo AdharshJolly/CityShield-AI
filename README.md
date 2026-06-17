@@ -44,7 +44,7 @@ Rigorous forensic audits revealed our model prioritizes macro-level safety hazar
 │   ├── fire/                # Fire module weights, metrics, samples
 │   ├── accident/            # (Teammate's module)
 │   └── ...                  # (Other modules)
-├── scripts/                 # Execution pipelines (analytics, infer)
+
 ├── hazards/fire/            # Core logic (analytics, inference)
 ├── docs/                    # Audits, architecture, and validation reports
 └── requirements.txt         # Pinned python dependencies

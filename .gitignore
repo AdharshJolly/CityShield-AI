@@ -38,7 +38,7 @@ venv.bak/
 data/
 experiments/
 *.pt
-!submission/*.pt
+!submission/**/*.pt
 *.onnx
 *.weights
 
@@ -61,9 +61,9 @@ environment_report.json
 # Reports and temporary files
 docs/archive/
 *.csv
-!submission/*.csv
+!submission/**/*.csv
 *.png
-!submission/*.png
+!submission/**/*.png
 cleanup_orchestrator.py
 transition_orchestrator.py
 fi_4_orchestrator.py
