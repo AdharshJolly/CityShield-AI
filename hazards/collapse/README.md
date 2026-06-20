@@ -65,3 +65,66 @@ Tested on 5 images sourced independently of the training dataset (not from Robof
 For CCTV-based deployment, camera placement and resolution matter. Distant, small-scale hazards may require higher-resolution input or a multi-scale/tiled inference approach to maintain detection reliability.
 
 ## Repository Structure
+
+hazards/collapse/
+
+├── training/
+
+│   ├── train.py                  # training script
+
+│   └── download_dataset.py       # dataset download script
+
+├── inference/
+
+│   ├── predict.py                # generates 10 annotated outputs + CSV
+
+│   └── test_real_world.py        # out-of-distribution validation
+
+├── data/
+
+│   └── dataset.yaml              # dataset config
+
+└── README.md
+
+## How to Run
+
+### 1. Environment Setup
+```powershell
+.\venv\Scripts\activate
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip install ultralytics
+```
+
+### 2. Training
+```powershell
+python hazards\collapse\training\train.py
+```
+Output saved to: `runs/detect/runs/collapse_v1/`
+
+### 3. Inference
+```powershell
+python hazards\collapse\inference\predict.py
+```
+Generates 10 annotated images and `predictions.csv` in `outputs/collapse/`
+
+### 4. Real-World Validation (optional)
+```powershell
+python hazards\collapse\inference\test_real_world.py
+```
+
+## Submission Deliverables
+
+| Deliverable | Location |
+|---|---|
+| Model weights | `runs/detect/runs/collapse_v1/weights/best.pt` |
+| Training metrics | `runs/detect/runs/collapse_v1/results.csv` |
+| PR Curve | `runs/detect/runs/collapse_v1/BoxPR_curve.png` |
+| Confusion Matrix | `runs/detect/runs/collapse_v1/confusion_matrix.png` |
+| Sample outputs (10 images, bounding boxes drawn) | `outputs/collapse/out_*.jpg` |
+| Bounding box coordinates | `outputs/collapse/predictions.csv` |
+
+## Known Limitations
+
+- Single-class model (`fallen_tree` only) — does not currently distinguish `collapsed_structure` or `debris` as separate classes due to limited labelled data availability for those categories at time of submission.
+- Reduced reliability on small/distant objects in frame.
+- Trained and validated primarily on outdoor daytime road scenes; performance on night-time or heavily occluded CCTV footage has not been separately validated.
