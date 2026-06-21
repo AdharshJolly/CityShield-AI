@@ -69,3 +69,13 @@ transition_orchestrator.py
 fi_4_orchestrator.py
 generate_fi_2_5_reports.py
 generate_fi_3_reports.py
+data/
+*.pt
+outputs/
+__pycache__/
+*.pyc
+.env
+runs/
+experiments/
+*.egg-info/
+.pytest_cache/
