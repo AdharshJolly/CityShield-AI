@@ -1,0 +1,25 @@
+# CityShield-AI Code Owners
+
+# Global fallback owner
+*                       ajcodesofficial+github@gmail.com
+
+# 🌳 Collapse Intelligence Engine
+/hazards/collapse/      albertjohn1639@gmail.com
+/submission/collapse/   albertjohn1639@gmail.com
+
+# 🦌 Animal Intelligence Engine
+/hazards/animal/        joannbinny@gmail.com
+/submission/animal/     joannbinny@gmail.com
+
+# 🚗 Accident Intelligence Engine
+/hazards/accident/      joshiny.maria@btech.christuniversity.in
+/submission/accident/   joshiny.maria@btech.christuniversity.in
+
+# 💡 Streetlight Intelligence Engine
+/hazards/streetlight/   jemimah.anna@btech.christuniversity.in
+/submission/streetlight/ jemimah.anna@btech.christuniversity.in
+
+# 🔥 Fire Intelligence Engine
+/hazards/fire/          ajcodesofficial+github@gmail.com
+/submission/fire/       ajcodesofficial+github@gmail.com
+
