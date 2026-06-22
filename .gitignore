@@ -79,3 +79,5 @@ runs/
 experiments/
 *.egg-info/
 .pytest_cache/
+
+!submission/**/DATA/
