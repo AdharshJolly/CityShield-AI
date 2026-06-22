@@ -28,9 +28,9 @@ Detects fallen trees and structural collapses obstructing urban roads.
 
 ### 🚗 Accident Intelligence Engine
 Detects vehicle collisions and pedestrian safety hazards.
-* **Target mAP50:** ≥ 65%
+* **Overall mAP50:** 99.5%
 * **Features:** ACRI (Accident & Collision Risk Index) analytics, persistence filtering, "Dark Spot" tracking for intersections with 3+ historical incidents.
-* **Status:** ⚠️ Analytics ready, awaiting final YOLO model training
+* **Status:** ✅ Trained & Ready
 
 ### 🦌 Animal Intelligence Engine
 Detects animals on roads and public areas from images and video footage to flag potential hazards.
