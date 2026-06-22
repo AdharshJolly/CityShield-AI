@@ -34,6 +34,7 @@ Detects vehicle collisions and pedestrian safety hazards.
 
 ### 🦌 Animal Intelligence Engine
 Detects animals on roads and public areas from images and video footage to flag potential hazards.
+* **Overall mAP50:** 94.0%
 * **Dataset:** Fine-tuned on the Animal Crossing dataset.
 * **Features:** Video mode ByteTrack multi-object tracking, per-track dwell time calculation in seconds.
 * **Status:** ✅ Trained & Ready
