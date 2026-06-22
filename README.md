@@ -39,6 +39,12 @@ Detects animals on roads and public areas from images and video footage to flag 
 * **Features:** Video mode ByteTrack multi-object tracking, per-track dwell time calculation in seconds.
 * **Status:** ✅ Trained & Ready
 
+### 💡 Streetlight Intelligence Engine
+Monitors streetlights for outages, flickering, and daytime burning to optimize municipal maintenance.
+* **Overall mAP50:** 89.0%
+* **Features:** Brightness anomaly detection, daylight awareness, and outage localization analytics.
+* **Status:** ✅ Integrated
+
 ## 4. Advanced Analytics Layer
 CityShield is **more than just object detection**. Raw bounding boxes are useless to a municipal dispatcher. Each module runs detections through a sophisticated analytics pipeline:
 * **Frame Persistence:** Filters out 1-frame glitches (like sun glare or passing vehicles).
