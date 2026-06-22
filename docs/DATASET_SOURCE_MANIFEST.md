@@ -1,50 +1,56 @@
-# DATASET SOURCE MANIFEST
+# CityShield-AI Dataset Source Manifest
+**KPI Group 4: Public Safety Hazards**
 
-To satisfy competition transparency requirements, this document outlines the exact composition and origin of the `Fire V3` training dataset.
+This manifest documents the exact origins, descriptions, priority weightings, and URLs for the datasets used to train the 5 core intelligence engines of CityShield-AI.
 
-## 1. Composition
-The `Fire V3` dataset is a curated aggregate of multiple open-source and proprietary environmental hazard datasets, specifically optimized for high-frequency tiny fire detection.
+## 1. Fire Intelligence Engine (Priority: 1 - Weightage: 40%)
+**Category:** Burning of waste, Smoke / Fire Detection
+*   **Description:** Fire and Smoke Detection. Severity and Vulnerability categorization: how severe the fire is and how crowded or dense the locality is (by counting people, buildings).
+*   **Analytics & Features:** 
+    *   Severity classification: Mild / Moderate / Severe
+    *   Vulnerability classification: Mild / Moderate / Severe
+    *   Waste or Burning Area/Size estimation (sq. m)
+*   **Available Datasets:**
+    *   [Roboflow - Eco-Group Fire/Smoke (10k images)](https://universe.roboflow.com/eco-group/fire-smoke-yvnrc)
+    *   [Roboflow - Wildfire Smoke (737 images)](https://public.roboflow.com/object-detection/wildfire-smoke/1)
+    *   [DataCluster - Domestic Fire & Smoke (40 images)](https://github.com/datacluster-labs/Domestic-Fire-and-Smoke-Dataset/tree/main/sample_datasets)
 
-## 2. Origin Sources
-| Source Name | Description | License | Exact Image Count | Usage Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| **FireNet v2.0** | Comprehensive dataset of early-stage wildland fires captured via CCTV and drones. (Prefix: `firenet_`) | MIT License | 12,450 | Primary source for medium and large smoke/fire plumes. |
-| **YVNRC Wildfire Dataset** | Roboflow Universe dataset consisting of synthetic and real noisy fire data. (Prefix: `yvnrc_`) | CC BY 4.0 | 8,230 | Used specifically to train the network to ignore glare and lighting artifacts (e.g., `NoiseWEBFire` images). |
-| **CityLens Proprietary Scraping** | Web-scraped dataset of urban fires, localized smoke from structural damage, and specific night-time edge cases. | Fair Use (Competition Only) | 5,100 | Addresses the gap in small urban structure fires. |
+## 2. Collapse Intelligence Engine (Priority: 2 - Weightage: 20%)
+**Category:** Collapsed trees or structures
+*   **Description:** Detection of collapsed trees or structures (such as light poles, barricades, other obstructions on the road).
+*   **Analytics & Features:** 
+    *   Classification into varieties of obstacles
+*   **Available Datasets:**
+    *   [Roboflow - Fallen Trees with Palms](https://universe.roboflow.com/overflow-thaap/fallen-trees-with-palms)
+    *   [DataCluster - Obstructions](https://github.com/datacluster-labs/Domestic-Fire-and-Smoke-Dataset/tree/main/sample_datasets)
 
-## 3. Preprocessing Steps
-1.  **Auto-Orientation:** Applied via EXIF data stripping to ensure standardization.
-2.  **Resize:** Squish to 640x640 (standard YOLO inference resolution).
-3.  **Class Mapping:** All bounding boxes strictly normalized to `0: fire`, `1: smoke`.
+## 3. Streetlight Intelligence Engine (Priority: 2 - Weightage: 20%)
+**Category:** Damaged Street Lights
+*   **Description:** Detection of streetlight anomalies to optimize maintenance.
+*   **Analytics & Features:** 
+    *   OFF-state detection
+    *   Flickering detection
+*   **Available Datasets:**
+    *   [Roboflow - Damaged Lights (699 images)](https://universe.roboflow.com/godspeed-yqpeo/damaged-lights)
+    *   [Roboflow - Streetlight Detection (10k images)](https://universe.roboflow.com/streetlight-detection/sodioum-only-jkq3f)
+    *   [Team16Project - Street Light Dataset (800 images)](https://github.com/Team16Project/Street-Light-Dataset)
 
-*(Note: The actual dataset images are not included in the source code repository due to size constraints. This manifest serves as the replicability guide).*
-# DATASET SOURCE MANIFEST — Accident Intelligence Module
+## 4. Accident Intelligence Engine (Priority: 3 - Weightage: 10%)
+**Category:** Dark Spots / Black Spots
+*   **Description:** A segment of road or an intersection where a concentrated number of traffic accidents or fatalities have historically occurred.
+*   **Analytics & Features:** 
+    *   Detect accidents on roads
+    *   Identify dark spots (location) by frequency of accidents (count)
+*   **Available Datasets:**
+    *   [Kaggle - Accident (2000 videos)](https://www.kaggle.com/datasets/picekl/accident)
+    *   [Kaggle - Road Crossing Dataset (104 videos)](https://www.kaggle.com/datasets/siddhi17/road-crossing-dataset)
 
-## 1. Composition
-The `Accident V1` dataset is a curated aggregate of open-source road safety datasets,
-optimized for detecting vehicle collisions and pedestrian hazards in urban CCTV and dashcam footage.
+## 5. Animal Intelligence Engine (Priority: 3 - Weightage: 10%)
+**Category:** Dead or Stray Animals on Road
+*   **Description:** Animal type categorization to prevent hazards.
+*   **Analytics & Features:** 
+    *   Dead or Alive
+    *   Count & dwell time (no. of animals and how long they are present)
+*   **Available Datasets:**
+    *   [Kaggle - Stray Animals (400k images)](https://www.kaggle.com/datasets/bsridevi/modes-dataset-of-stray-animals)
 
-## 2. Origin Sources
-
-| Source Name | Description | License | Estimated Image Count | Usage Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| **Kaggle Accident Detection Dataset** (picekl/accident) | Real-world road accident videos captured from dashcams and CCTV. Frames extracted at 1fps. | CC BY 4.0 | ~8,000 frames | Primary source for vehicle collision class. |
-| **Road Crossing Dataset** (siddhi17/road-crossing-dataset) | Pedestrian road crossing footage from urban intersections across multiple cities. | CC BY 4.0 | ~3,500 frames | Primary source for pedestrian_hazard class. |
-| **Roboflow Universe — Road Accident Detection** | Pre-annotated accident detection images from Roboflow community contributors. | CC BY 4.0 | ~2,000 images | Supplements collision class with diverse angles and lighting. |
-
-## 3. Class Mapping
-
-| Class ID | Class Name | Description |
-| :--- | :--- | :--- |
-| `0` | `accident` | Any frame containing a visible vehicle collision or its immediate aftermath. |
-| `1` | `pedestrian_hazard` | Any frame containing a pedestrian in active danger on a road or intersection. |
-
-## 4. Preprocessing Steps
-1. **Frame Extraction:** Videos sampled at 1 frame per second using OpenCV.
-2. **Auto-Orientation:** EXIF data stripped for standardization.
-3. **Resize:** All images squished to 640×640 (standard YOLO inference resolution).
-4. **Annotation:** Bounding boxes drawn and exported in YOLOv11 format via Roboflow.
-5. **Split:** 80% train / 10% valid / 10% test. No cross-split leakage.
-
-## 5. Dataset Location
-`data/processed/accident_v1/` (not included in repo due to size — see this manifest for replication).
